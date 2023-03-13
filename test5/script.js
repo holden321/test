@@ -34,7 +34,6 @@ $(function () {
 			$("#popup .modal-body").html(result);
 			$('#popup').modal();
 			fail && fail();
-			console.log(result)
 		}
 
 		function _always() {
