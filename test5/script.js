@@ -47,17 +47,20 @@ $(function () {
 
 		let order = $(tableSelector).DataTable().order();
 
-		$(".members").html(ejs.render(membersTemplate, {members: members}))
+		$(".members").html(ejs.render(membersTemplate, {members: members}));
 
-		let table = $(tableSelector).DataTable({
-			paging: false,
-			searching: false,
-			info: false,
-		});
+		if (members.length) {
 
-		if (order) {
-			table.order(order);
-			table.draw();
+			let table = $(tableSelector).DataTable({
+				paging: false,
+				searching: false,
+				info: false,
+			});
+
+			if (order) {
+				table.order(order);
+				table.draw();
+			}
 		}
 	}
 
